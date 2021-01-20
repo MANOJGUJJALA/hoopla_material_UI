@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">
+  <span><button mat-raised-button color="primary" [routerLink]="['/dashboard']" class="navbar-brand">Hoopla
+    </button></span>
+  <span> &nbsp;&nbsp;&nbsp; <mat-form-field>
+      <input class="searchIcon" type="text" matInput placeholder="search" [(ngModel)]="searchKey" (keydown)="searchProductsUpndDown($event, searchKey)">
+      <mat-icon (click)="searchProdts(searchKey)">search</mat-icon>
+      <mat-icon class="lock"></mat-icon>
+    </mat-form-field></span>
+  <span class="example-fill-remaining-space"></span>
+  
+  <span>
+    <mat-icon *ngIf="hide && (loggedUser.uCredentials.uEmail==null)" [routerLink]="['/login']" 
+    (click)="hideContent()">lock</mat-icon>
+  </span>
+  <span>
+    <mat-icon [routerLink]="['/register']" routerLinkActive="router-link-active" (click)="showContent()" 
+    *ngIf="show && (loggedUser.uCredentials.uEmail==null) && display">
+      person</mat-icon>
+    
+  </span>
+  <span *ngIf="loggedUser.uCredentials.uEmail!=null">
+    {{"Welcome &nbsp;"+loggedUser.uCredentials.uEmail}}</span>
+  <!-- <span *ngIf="loggedUser.uCredentials.uEmail==null">
+    {{"Welcome &nbsp;" +check}}
+  </span>&nbsp;&nbsp;&nbsp; -->
+    <mat-icon [routerLink]="['/register']" routerLinkActive="router-link-active" (click)="showContent()" 
+    *ngIf="loggedUser.uCredentials.uEmail!=null">
+      </mat-icon>
+    <!-- <mat-icon [routerLink]="['/register']" routerLinkActive="router-link-active" (click)="showContent()" 
+    *ngIf="loggedUser.uCredentials.uEmail!=null">
+      folder-special</mat-icon>&nbsp;&nbsp;&nbsp; -->
+ 
+  
+  <!-- <span *ngIf="loginStatus"> -->
+    <span name="cartIcon" *ngIf="loggedUser.uCredentials.uEmail!=null">
+      <mat-icon matTooltip="Cart" class="mx-2" 
+        matBadgeColor="warn" routerLinkActive="accent-color" 
+        [routerLink]="['/cart']">
+        shopping_cart
+      </mat-icon>
+      
+    </span>
+
+    <span *ngIf="loggedUser.uCredentials.uEmail!=null">
+      <mat-icon matTooltip="Orders" class="mx-2" 
+         matBadgeColor="warn" class="mx-2"
+        routerLinkActive="accent-color" [routerLink]="['/orders']">
+        receipt
+      </mat-icon>
+      <ng-template #ordericon>
+        <mat-icon matTooltip="Orders" class="mx-2" routerLinkActive="accent-color"
+          [routerLink]="['/orders']">
+          receipt
+        </mat-icon>
+      </ng-template>
+    </span>
+  <!-- </span> -->
+  <span *ngIf="loggedUser.uCredentials.uEmail!=null">
+    <mat-icon (click)="logout()">logout</mat-icon>
+  </span>
+
+
+
+</mat-toolbar>
+<div class="container-fluid">
+
+</div>
+<router-outlet></router-outlet>

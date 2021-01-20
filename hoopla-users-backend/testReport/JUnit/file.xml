@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0020" tests="19" failures="4">
+  <testsuite name="" timestamp="2020-12-17T11:15:42" tests="0" time="0.0000" failures="1">
+    <testcase name="Uncaught error outside test suite" time="0.0000" classname="">
+      <failure message="listen EADDRINUSE: address already in use :::1111" type="Error"><![CDATA[Error: listen EADDRINUSE: address already in use :::1111
+    at Server.setupListenHandle [as _listen2] (net.js:1228:14)
+    at listenInCluster (net.js:1276:12)
+    at Server.listen (net.js:1364:7)
+    at Function.listen (node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (src\app.js:32:5)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at Object.<anonymous> (src\test\routing.spec.js:3:13)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at Array.forEach (<anonymous>)
+    at Object.runCommand (node_modules\yargs\lib\command.js:242:26)
+    at Object.parseArgs [as _parseArgs] (node_modules\yargs\yargs.js:1096:28)
+    at Object.parse (node_modules\yargs\yargs.js:575:25)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:839:10)
+    at internal/main/run_main_module.js:17:11]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Root Suite.testing-login-method" timestamp="2020-12-17T11:15:42" tests="16" file="C:\Users\nitin.pradhan\Downloads\hoopla_oct_batch\hoopla-users-backend\src\test\routing.spec.js" time="0.0020" failures="1">
+    <testcase name="&quot;before each&quot; hook for &quot;testing for positive respose, successfull login&quot;" time="0.0020" classname="testing-login-method">
+      <failure message="app.address is not a function" type="TypeError"><![CDATA[TypeError: app.address is not a function
+    at Test.serverAddress (node_modules\supertest\lib\test.js:57:18)
+    at new Test (node_modules\supertest\lib\test.js:38:12)
+    at Object.obj.<computed> [as get] (node_modules\supertest\index.js:27:14)
+    at Context.<anonymous> (src\test\routing.spec.js:9:22)
+    at processImmediate (internal/timers.js:439:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Root Suite.testing-register-method" timestamp="2020-12-17T11:15:42" tests="2" file="C:\Users\nitin.pradhan\Downloads\hoopla_oct_batch\hoopla-users-backend\src\test\routing.spec.js" time="0.0000" failures="1">
+    <testcase name="&quot;before each&quot; hook for &quot;testing for positive respose, successfull register&quot;" time="0.0000" classname="testing-register-method">
+      <failure message="app.address is not a function" type="TypeError"><![CDATA[TypeError: app.address is not a function
+    at Test.serverAddress (node_modules\supertest\lib\test.js:57:18)
+    at new Test (node_modules\supertest\lib\test.js:38:12)
+    at Object.obj.<computed> [as get] (node_modules\supertest\index.js:27:14)
+    at Context.<anonymous> (src\test\routing.spec.js:146:22)
+    at processImmediate (internal/timers.js:439:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Root Suite.testing-login-method" timestamp="2020-12-17T11:15:42" tests="1" file="C:\Users\nitin.pradhan\Downloads\hoopla_oct_batch\hoopla-users-backend\src\test\user.spec.js" time="0.0000" failures="1">
+    <testcase name="&quot;before each&quot; hook for &quot;testing for negative respose, wrong email&quot;" time="0.0000" classname="testing-login-method">
+      <failure message="app.address is not a function" type="TypeError"><![CDATA[TypeError: app.address is not a function
+    at Test.serverAddress (node_modules\supertest\lib\test.js:57:18)
+    at new Test (node_modules\supertest\lib\test.js:38:12)
+    at Object.obj.<computed> [as get] (node_modules\supertest\index.js:27:14)
+    at Context.<anonymous> (src\test\user.spec.js:9:22)
+    at processImmediate (internal/timers.js:439:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

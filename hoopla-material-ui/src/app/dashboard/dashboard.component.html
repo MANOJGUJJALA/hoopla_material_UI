@@ -1,0 +1,72 @@
+<!-- <p>   <span matBadge="2365893" matBadgeOverlap="true">   Available Seats :</span>   </p>
+<p>hai <mat-icon class="iconStart" matBadge="42356mlkollk" matBadgeColor="accent">star</mat-icon></p> -->
+<!-- <p>hia <sup>haha</sup> </p>
+<mat-icon>star</mat-icon> -->
+<mat-tab-group mat-stretch-tabs mat-align-tabs="center">
+
+
+  <mat-tab *ngFor="let tab of categories">
+    <ng-template mat-tab-label>
+      <span (click)="viewProductByCategory(tab) ">{{tab}}</span>
+    </ng-template>
+    
+    <div  *ngIf="productShow">
+
+      
+      <app-product-all-compo [productArry]="cardData"></app-product-all-compo>
+
+    </div>
+      <!-- <div   class="row">
+        <div *ngFor="let obj of cardData;let i=index"   class="col-md-3">
+          
+          <mat-card matBadgeOverlap="false"    >
+            <img  mat-card-image src="{{imgUrl[i]}}"  alt="no img" >
+            <mat-card-content>
+             <b >{{obj.productName}}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <b >{{obj.price | currency:'INR' }} <sup style="background-color: rgb(250, 9, 89);"> {{obj.rating}} ☆<mat-icon style="color: white;">star</mat-icon>  </sup>  </b>
+                            
+              <span class="badge badge-pill" style="background-color: rgb(245, 16, 142); color: white;">
+                {{obj.rating | number: '1.1-1'}}
+                <mat-icon inline="true">star</mat-icon>
+            </span>
+            
+          </mat-card-content>
+        </mat-card>
+         -->
+        <!-- <mat-card class="flexClass">
+          {{obj.productName}}
+          <mat-card-header>Content 1 {{tab}}</mat-card-header>
+          <mat-card-content>Display the content</mat-card-content>
+          <mat-card-footer>Footer</mat-card-footer>
+        </mat-card>
+      -->
+    
+          
+    
+
+  </mat-tab>
+
+</mat-tab-group>
+
+<mat-carousel timings="250ms ease-in" [autoplay]="true" interval="2000" color="accent" maxWidth="auto" maxHeight="auto"
+  proportion="40" slides="4" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true"
+  [useMouseWheel]="false" orientation="ltr" *ngIf="slideShow">
+  <mat-carousel-slide>
+    <div style="text-align: center"><img src="../assets/img/clothing.png" alt="Clothing"
+        (click)="viewProductByCategory('Clothing')"></div>
+  </mat-carousel-slide>
+  <mat-carousel-slide>
+    <div style="text-align: center"><img src="../assets/img/furnitures.png" alt="furnitures"
+        (click)="viewProductByCategory('Furniture')"></div>
+  </mat-carousel-slide>
+  <mat-carousel-slide>
+    <div style="text-align: center"> <img src="../assets/img/shoes.png" alt="shoes"
+        (click)="viewProductByCategory('Shoes')"></div>
+  </mat-carousel-slide>
+  <mat-carousel-slide>
+    <div style="text-align: center"> <img src="../assets/img/mobiles.png" alt="mobiles"
+        (click)="viewProductByCategory('Electronics')"></div>
+  </mat-carousel-slide>
+</mat-carousel>
+
+<!-- <router-outlet></router-outlet> -->

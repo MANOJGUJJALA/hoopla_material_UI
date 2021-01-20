@@ -1,0 +1,48 @@
+<!-- <p>product-all-compo works!</p>
+{{productArry | json}} -->
+
+<mat-grid-list cols="4" class="m-3" *ngIf="!show">
+    <mat-grid-tile *ngFor="let product of productArry">
+        <div class="col-10">
+            <mat-card id="productCard" (click)="showProductid(product._id)">
+                <img mat-card-lg-image src="assets/img/{{product.image}}" alt="{{product.image}}"style="object-fit: initial;">
+                    
+                <mat-card-content>
+                    <tr>
+                        <td colspan="2" align="end">
+                           
+                            <span class="badge badge-pill" style="background-color: rgb(245, 16, 142); color: white;">
+                                {{product.rating | number: '1.1-1'}}
+                                <mat-icon inline="true">star</mat-icon>
+                            </span>  
+                        </td>  
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">{{product.name}}</td>
+                        <td class="font-weight-bold" align="center">{{product.price|currency:'INR'}}
+                        </td>
+                    </tr>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+    
+    <div class="container-fluid" *ngIf="show">
+        <div class="row">
+            <div class="mx-auto col-4">
+                <div class="text-center">
+                
+    <div class="spinner-border"></div>
+    
+</div>
+<h1 class="mat-h1 text-center">No Items Matched Your Search!</h1>
+</div>
+</div>
+</div>
+
+
+

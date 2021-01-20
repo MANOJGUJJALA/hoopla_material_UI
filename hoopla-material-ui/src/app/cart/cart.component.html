@@ -1,0 +1,82 @@
+<!-- <p>cart works!</p> -->
+<ng-container *ngIf="cardArry.length">
+    <h2  class="mat-display-1">You have {{cardArry.length}} product in your cart.</h2>
+
+    <mat-card style="width: 900px; margin: 10px;float:left;" *ngFor="let productDetails of cardArry;">
+
+        <mat-card-content>
+            <h1 class="text-primary"><a class="text-primary"
+                    (click)="productDescriptionLink(productDetails._id)">{{productDetails.name}}</a></h1>
+
+
+            <table class="table">
+                <tr>
+                    <th scope="col">Quantity in cart </th>
+                    <th scope="col"> Price </th>
+                    <th scope="col">Products left in stock </th>
+                    <th scope="col">Remove from cart</th>
+                </tr>
+
+                <tr>
+                    <mat-form-field>
+                        <input  type="number" matInput [(ngModel)]="quantity" min="1"
+                            
+                            (input)="Dynamic_Price()">
+                    </mat-form-field>
+
+                    <td>
+                        {{productDetails.price }}</td>
+                        <td>
+                            {{productDetails.availability }}</td>
+
+                    
+                    <button  mat-icon-button (click)="deleteThis(productDetails._id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </tr>
+            </table>
+        </mat-card-content>
+
+
+
+    </mat-card>
+    <mat-card style="width: 300px; margin-left: 1000px;position: absolute;">
+        <mat-card-header>
+            <mat-card-title>
+                <h1>Price Details:</h1>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <table class="table">
+                <tr>
+                    <th>Cart Total(MRP): </th>
+                    <td>{{price | currency : 'INR'}}</td>
+                </tr>
+                <tr>
+                    <th>Total Tax(17% by default): </th>
+                    <td>{{tax | currency : 'INR'}}</td>
+                </tr>
+                <tr>
+                    <th>Total Payable: </th>
+                    <td >{{totalAmount | currency : 'INR'}}</td>
+                </tr>
+            </table>
+        </mat-card-content>
+        <mat-card-actions>
+            
+            <button  class="btn btn-primary form-control" (click)="order_placed()"
+                [disabled]="checkoutbtn ">CHECKOUT</button>
+        </mat-card-actions>
+    </mat-card>
+
+</ng-container>   
+<div *ngIf="!cardArry.length || errorMessage">
+    <div class="row">
+        <div class="col-md-6 offset-3 mt-4 text-center  display-2">
+
+            <mat-icon [inline]="true" class="cart">shopping_cart</mat-icon>
+            <div name="noItems" class="mat-h1">Cart is empty.</div>
+            <div> <h4> Looks like you have no items in your shopping cart</h4></div>
+        </div>
+    </div>
+</div>

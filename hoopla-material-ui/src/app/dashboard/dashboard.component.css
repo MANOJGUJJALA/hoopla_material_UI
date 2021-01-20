@@ -1,0 +1,39 @@
+
+  .searchIcon{
+   /* width: theme.spacing(9), */
+   height: '100%';
+   position : 'absolute',
+   /* pointerEvents: 'none', */
+   /* display: 'flex', */
+   /* alignItems: 'center';
+   justifyContent: 'center'; */
+ }
+
+ .flexClass{
+   display: inline-flex;
+   flex-direction: row;
+   background-color: red;
+   /* padding: 100px; */
+ }
+ .iconStart{
+   
+ }
+ /* .mat-badge-content{
+  width: fit-cotent;
+  text-align:center;
+  border-radius: 7px;
+  left: 13px;
+} */
+ /* .imgs{
+   width: 100px;
+   height: 100px;
+   
+   
+ } */
+ /* mat-card img{
+  width: 200px;
+  height: 200px;
+  
+  align-items: center;
+  
+} */

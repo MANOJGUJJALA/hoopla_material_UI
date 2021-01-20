@@ -1,0 +1,79 @@
+
+<ng-container *ngIf="cardData">
+    <mat-grid-list cols="2" padding-top="0px">
+        <mat-grid-tile class="mi-tile-contents-top">
+            <mat-card>
+                <img mat-card-image src="../../assets/img/{{cardData.image}}" alt="{{cardData.image}}">
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{cardData.category}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                       <b> {{cardData.name | titlecase}}</b>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    
+
+                  
+                    <div class="mt-4">
+                        <div class="h4">Description</div>
+                        <h3>{{cardData.description}}</h3>
+                    </div>
+                    <!-- availability -->
+
+                    <div class="mt-4">
+                        <div class="h4">Availability</div>
+                        <h3>{{cardData.availability}}</h3>
+                    </div>
+                    <div class="mt-4">
+                        <div class="h4">Specifications</div>
+                        <ul class="text-dark">
+                            <div class="h6">
+                                <li>
+                                    <span class="font-weight-bold mr-2">Color</span>
+                                    <span>{{cardData.color}}</span>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+  
+                   
+                    <div class="mt-4">
+                        <span class="h4 mr-3">Rating</span>
+                        <span class="badge badge-pill" style="background-color: rgb(245, 16, 142); color: white;">
+                            {{cardData.rating | number: '1.1-1'}}
+                            <mat-icon inline="true">star</mat-icon>
+                        </span>
+                    </div>
+
+                    
+                    <div class="mt-4">
+                        <div class="h4">Price</div>
+                        
+                        <span class="h6 ">
+                            {{cardData.price | currency:'INR'}}
+                        </span>
+                    </div>
+
+                    <div class="mt-4">
+                       <button class="mx-1" mat-flat-button color="primary" (click)="AddToCart()">Add to Cart</button>
+
+                        <button class="mx-1" mat-flat-button color="accent" (click)="goBack()">
+                            Go Back
+                        </button>
+                    </div>
+                </mat-card-content>
+
+                <mat-card-actions>
+
+                </mat-card-actions>
+
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-container>

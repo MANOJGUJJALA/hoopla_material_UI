@@ -1,0 +1,106 @@
+<br><br><br>
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <div class="card-header bg-info text-light">
+                <h1 class="display-4 text-center">Register</h1>
+            </div>
+            <div class='card-body'>
+               <form [formGroup]='registerForm' (ngSubmit)='register()' class="form">
+                <div class="form-group">
+                    <label for="name">Username*</label>
+                    <input type="text" formControlName='name' class="form-control" name='name' placeholder="Name">
+                    <mat-hint>Hint:Username</mat-hint>
+                </div>
+
+                <div *ngIf='registerForm.controls.name.invalid'>
+                    <span class="text-danger" *ngIf='registerForm.controls.name.errors?.required && registerForm.controls.name.dirty'>
+                        Field Required
+                    </span>
+                    <span class="text-danger" *ngIf='registerForm.controls.name.errors?.pattern && registerForm.controls.name.dirty'> 
+                        <!-- {{registerForm.controls.name.errors.userErr}} -->
+                        Should Contain only alphabets and white space
+                    </span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="dob">DOB*</label>
+                    <input type="date"formControlName='dob' class="form-control" name="dob" placeholder="dob">
+                    <mat-hint>Hint:01/01/2001</mat-hint>
+                </div>
+
+                <div *ngIf='registerForm.controls.dob.invalid'>
+                    <span class="text-danger" *ngIf='registerForm.controls.dob.errors?.required && registerForm.controls.dob.touched'>
+                        Field Required
+                    </span>
+                    <span class="text-danger" *ngIf='registerForm.controls.dob.errors?.dobErr && registerForm.controls.dob.touched && registerForm.controls.dob.dirty'> 
+                       {{registerForm.controls.dob.errors.dobErr}}
+                    </span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="mobNo">Mobile Number*</label>
+                    <input type="number" formControlName='mobNo' class="form-control" name="mobNo" placeholder="Phone Number">
+                    <mat-hint>Hint:Enter 10 digit Mobile Number</mat-hint>
+                </div>
+
+                <div *ngIf='registerForm.controls.emailId.invalid'>
+                    <span class="text-danger" *ngIf='registerForm.controls.mobNo.errors?.required && registerForm.controls.mobNo.touched'>
+                        Field Required
+                    </span>
+                    <span class="text-danger" *ngIf='registerForm.controls.mobNo.errors?.pattern && registerForm.controls.mobNo.touched'> 
+                        Please enter valid Phone Number
+                    </span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="emailId">Email Id*</label>
+                    <input type="text" formControlName='emailId' class="form-control" name="emailId" placeholder="Email Id">
+                    <mat-hint>Hint: abc@infy.com</mat-hint>
+                </div>
+
+                <div *ngIf='registerForm.controls.emailId.invalid'>
+                    <span class="text-danger" *ngIf='registerForm.controls.emailId.errors?.required && registerForm.controls.emailId.touched'>
+                        Field Required
+                    </span>
+                    <span class="text-danger" *ngIf='registerForm.controls.emailId.errors?.pattern && registerForm.controls.emailId.touched'> 
+                        Email Id format is wrong.
+                    </span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" formControlName='password' class="form-control" name="password" placeholder="Password">
+                    <mat-hint>Hint:Abc@123</mat-hint>
+                </div>
+
+                <div *ngIf='registerForm.controls.password.invalid'>
+                    <span class="text-danger" *ngIf='registerForm.controls.password.errors?.required && registerForm.controls.password.touched'>
+                        Field Required
+                    </span>
+                    <span class="text-danger" *ngIf='registerForm.controls.password.errors?.pattern && registerForm.controls.password.dirty'> 
+                        Should be 7-20 character long consisting of alphabets, digits and !,@,#,$,%,^,& or *
+                    </span>
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" formControlName='address' class="form-control" name="address" placeholder="Address" id="address">
+                </div> -->
+                <!-- <div class="alert alert-danger" 
+                *ngIf='registerForm.controls.address.errors?.required && registerForm.controls.mobNo.touched'>
+                Enter Address
+                </div> -->
+
+
+                <button [disabled]='!registerForm.valid' type="submit" class="btn btn-primary btn-block">Register</button>
+               </form> 
+            </div>
+        </div>
+    </div>
+</div>
